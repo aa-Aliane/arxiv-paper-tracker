@@ -31,11 +31,14 @@ Each issue includes the title, authors, abstract, ArXiv link, and a personal not
 
 ### 1. Clone and install
 
+#### Clone
+
 ```bash
 git clone https://github.com/<your-username>/arxiv-paper-tracker.git
 cd arxiv-paper-tracker
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
+
 ```
 
 ### 2. Configure keywords
