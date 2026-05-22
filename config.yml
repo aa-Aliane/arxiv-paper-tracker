@@ -1,9 +1,14 @@
 keywords:
   - arabic NLP
   - low-resource machine translation
-  - arabic sentiment analysis
+  - arabic intent detection
   - arabic transformers
-  - multilingual NLP
+  - model compression NLP
+
+categories:
+  - cs.CL
+  - cs.AI
+  - cs.LG
 
 max_results_per_keyword: 10
 lookback_hours: 24

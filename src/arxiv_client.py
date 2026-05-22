@@ -10,10 +10,16 @@ def load_config(path: str = "config.yml") -> dict:
         return yaml.safe_load(f)
 
 
-def fetch_papers(keyword: str, max_results: int = 10) -> list[dict]:
+def fetch_papers(
+    keyword: str, categories: list[str], max_results: int = 10
+) -> list[dict]:
     url = "https://export.arxiv.org/api/query"
+
+    category_filter = " OR ".join([f"cat:{c}" for c in categories])
+    search_query = f'all:"{keyword}" AND ({category_filter})'
+
     params = {
-        "search_query": f"all:{keyword}",
+        "search_query": search_query,
         "start": 0,
         "max_results": max_results,
         "sortBy": "submittedDate",
@@ -75,6 +81,7 @@ def filter_recent(papers: list[dict], hours: int = 24) -> list[dict]:
 
 def fetch_all(config: dict) -> list[dict]:
     keywords = config["keywords"]
+    categories = config.get("categories", ["cs.CL"])
     max_results = config.get("max_results_per_keyword", 10)
     hours = config.get("lookback_hours", 24)
 
@@ -83,7 +90,7 @@ def fetch_all(config: dict) -> list[dict]:
 
     for keyword in keywords:
         print(f"Fetching: '{keyword}'...")
-        papers = fetch_papers(keyword, max_results)
+        papers = fetch_papers(keyword, categories, max_results)
         recent = filter_recent(papers, hours)
 
         for paper in recent:
