@@ -13,9 +13,10 @@ def main():
     config = load_config()
     print("🔍 Fetching papers from ArXiv...\n")
     papers = fetch_all(config)
-    print(
-        f"\n✓ Found {len(papers)} unique papers in the last {config['lookback_hours']}h\n"
-    )
+
+    hours = config.get("lookback_hours", 4380)
+    label = f"{hours // 720} months" if hours >= 720 else f"{hours}h"
+    print(f"\n✓ Found {len(papers)} unique papers in the last {label}\n")
 
     if args.dry_run:
         print("--- DRY RUN: no issues will be created ---\n")

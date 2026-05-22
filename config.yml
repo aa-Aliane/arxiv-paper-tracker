@@ -8,7 +8,7 @@ keywords:
 categories:
   - cs.CL
   - cs.AI
-  - cs.LG
 
-max_results_per_keyword: 10
-lookback_hours: 24
+max_results_per_keyword: 50
+
+lookback_hours: 4380
