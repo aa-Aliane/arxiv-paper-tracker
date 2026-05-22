@@ -1,0 +1,9 @@
+keywords:
+  - arabic NLP
+  - low-resource machine translation
+  - arabic sentiment analysis
+  - arabic transformers
+  - multilingual NLP
+
+max_results_per_keyword: 10
+lookback_hours: 24
