@@ -79,10 +79,10 @@ Required permission: **Issues: Read & Write**, scoped to your reading-list repo.
 ### 4. Run
 
 ```bash
-# Live run — creates GitHub Issues
+# Live run : creates GitHub Issues
 python main.py
 
-# Dry run — prints papers without touching GitHub
+# Dry run : prints papers without touching GitHub
 python main.py --dry-run
 ```
 
@@ -128,10 +128,10 @@ arxiv-paper-tracker/
 
 ## Possible extensions
 
-- **Weekly digest** — a Monday workflow that summarises the week's papers into one Issue
-- **Semantic Scholar integration** — filter by citation count as a relevance proxy
-- **Slack / email notifications** — ping yourself when new papers are found
-- **FastAPI endpoint** — trigger the tracker on demand via HTTP
+- **Weekly digest** : a Monday workflow that summarises the week's papers into one Issue
+- **Semantic Scholar integration** : filter by citation count as a relevance proxy
+- **Slack / email notifications** : ping yourself when new papers are found
+- **FastAPI endpoint** : trigger the tracker on demand via HTTP
 
 ---
 
